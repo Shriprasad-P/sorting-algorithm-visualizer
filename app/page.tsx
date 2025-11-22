@@ -430,7 +430,7 @@ export default function AlgorithmVisualizer() {
         setArray([...localArr])
     }
 
-    const maxVal = Math.max(...array, 100)
+    const maxVal = Math.max(...array, array.length > 0 ? 1 : 100)
 
     return (
         <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
@@ -471,10 +471,10 @@ export default function AlgorithmVisualizer() {
                                                 key={index}
                                                 layout
                                                 className={`flex-1 rounded-t-sm transition-colors duration-100 ${activeIndices.includes(index)
-                                                        ? "bg-destructive glow-destructive z-10"
-                                                        : sortedIndices.includes(index)
-                                                            ? "bg-primary glow-primary"
-                                                            : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                                                    ? "bg-destructive glow-destructive z-10"
+                                                    : sortedIndices.includes(index)
+                                                        ? "bg-primary glow-primary"
+                                                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                                                     }`}
                                                 style={{
                                                     height: `${(value / maxVal) * 100}%`,
